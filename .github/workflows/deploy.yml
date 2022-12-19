@@ -2,9 +2,8 @@
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches:
+      - master
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,10 +23,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm ci, build and test
-        run: |
-          npm install
-          npm run build --if-present
+      - name: build
+        run: npm ci
+             npm run build --if-present
+        env:
+          CI: false
       - name: deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
