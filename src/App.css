@@ -31,7 +31,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 500px;
+  max-width: 400px;
   padding: 40px;
   background: #F5F5F5;
   box-sizing: border-box;
@@ -53,7 +53,7 @@ main {
 .tenzies-container .dice-container {
   display: grid;
   grid-template: auto auto/repeat(5, 1fr);
-  column-gap: 40px;
+  column-gap: 20px;
   row-gap: 30px;
 }
 
